@@ -89,21 +89,6 @@
     </section>
     <!-- Section: Design Block -->
 
-    <?php #inicio de codigo php
-              include 'modelo/conexion.php'; #incluyo la conexion a la base de datos
-              $sql = $conexion->query("SELECT * FROM tbl_usuario");
-
-              while($datos = $sql->fetch_object()){ ?>
-
-    <p><?= $datos->id_usuario?></p>
-    <p><?= $datos->nombres?></p>
-    <p><?= $datos->apellidos?></p>
-    <p><?= $datos->email?></p>
-    <p><?= $datos->contrasena?></p>
-    <p>================================</p>
-    <?php } 
-                                    ?>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
