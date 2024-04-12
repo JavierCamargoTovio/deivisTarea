@@ -53,7 +53,7 @@ $sql = $conexion->query("SELECT * FROM tbl_tarea WHERE id_tarea = $id"); #selecc
       <div>
         
       <button type="button" class="btn btn-secondary">
-     <a style="text-decoration: none; color:white " class="volver" href="http://localhost/CRUD_TAREA/index.php">Cancelar</a>
+     <a style="text-decoration: none; color:white " class="volver" href="index.php">Cancelar</a>
       </button>
         <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Modificar</button>
      

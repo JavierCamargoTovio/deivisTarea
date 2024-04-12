@@ -1,3 +1,11 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['email']) && isset($_SESSION['nombres'])) {
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +19,39 @@
 </head>
 
 <body>
+    <div style="background:#0B5FF0;">
+        <ul class="nav justify-content-end">
+            
+            <li class="nav-item">
+                <p class="nav-link" style="color:white;font-weight: bold; ">Bienvenido,
+                    <?php echo $_SESSION['nombres']," ",  $_SESSION['apellidos']; ?></p>
+            </li>
+            <li class="nav-item">
+            <a style="color:white;font-weight: bold;"class="nav-link" href="cerrar_sesion.php">Cerrar sesion</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
 
     <h1 class="text-center p-3">Gestión de tareas </h1>
     <div class="container">
-        <!--agrego container-fluid row -->
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+    <a class="nav-link"  href="index.php">Inicio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  href="listar_tarea_completada.php">Listar tareas completadas</a>
+  </li>
+ 
+  <li class="nav-item">
+    <a class="nav-link" href="listar_tarea_no_completada.php">Listar tareas NO completadas</a>
+  </li>
+  
+</ul>
+<br>
 
         <form method="POST">
             <!--agrego col-4 -->
@@ -80,7 +117,7 @@
 
     <div class="col-12 p-12">
         <h3 class="text-center text-secondary">Listado de tareas</h3>
-        <table class="table">
+        <table class="table table-striped">
             <!--agrego tablas de boostrap https://getbootstrap.com/docs/5.3/content/tables/-->
             <thead>
                 <tr>
@@ -130,6 +167,19 @@
             </tbody>
         </table>
     </div>
+
+
+    <?php 
+
+}else{
+
+     header("Location: index.php");
+
+     exit();
+
+}
+
+ ?>
     <!-- Bootstrap CSS https://getbootstrap.com/ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
